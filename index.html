@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+
+    let a = [{id:1, value:3}, {id:2, value:7}, {id:3, value:3}, {id:4, value:1}, {id:5, value:4}];
+    let arr = [];
+    let i =0;
+    let j =0;
+    let max = 0;
+    let newArrobj =[];
+    let lastStruc = {};
+    let finalStruc = {};
+
+    for(let obj of a){
+        arr[j] = obj.value;
+        }
+
+
+    for(let obj of a){
+        if(obj.id>max){
+            lastStruc = obj;
+            i++;
+            }
+    }
+
+    function func (){
+    let valuetest = lastStruc.value+1;
+
+    while(arr.includes(valuetest)){
+            valuetest++;
+        }
+        return valuetest;
+        }
+
+    finalStruc.id = lastStruc.id+1;
+    //lastStruc.id = max;
+    finalStruc.value = func();
+     
+    a = [...a,finalStruc];
+    console.log(JSON.stringify(finalStruc))
+
+</script>
+</html>
